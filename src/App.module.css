@@ -3,3 +3,9 @@
   max-width: 80%;
   margin: auto;
 }
+
+.mainContainer {
+  margin: auto;
+  align-content: center;
+  padding-top: 5rem;
+}
