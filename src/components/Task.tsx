@@ -3,11 +3,11 @@ import { Trash, CheckCircle, Circle } from '@phosphor-icons/react'
 import { useState } from 'react'
 
   export interface TaskType {
-  id: number;
+  id: string;
   content: string;
   isChecked: boolean;
-  onDeleteTask: (id: number) => void;
-  changeCheckFunction: (id: number) => void;
+  onDeleteTask: (id: string) => void;
+  changeCheckFunction: (id: string) => void;
 }
 
 export function Task({id, content, isChecked, onDeleteTask, changeCheckFunction }: TaskType) {

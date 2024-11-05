@@ -1,33 +1,42 @@
 import { Task } from "./Task";
 import styles from "./TasksContainer.module.css"
-import { useState, useEffect, FormEvent } from 'react'
+import { useState, useEffect } from 'react'
 import clipboard from '../assets/clipboard.svg'
-import {TaskType} from './Task'
 
-export function TasksContainer({NTask}) {
+interface TaskType {
+  id: string;
+  content: string;
+  isChecked: boolean;
+}
+
+interface NewTaskInterface {
+  NTask:TaskType | 1
+}
+
+export function TasksContainer({NTask}:NewTaskInterface) {
 
   const tasksMocked = [
     {
-      id:1,
+      id:'1',
       content: 'Estudar programação (Primeira modulo do react).',
       isChecked: false
     },
     {
-      id:2,
+      id:'2',
       content: 'Fazer exercicios físicos. Flexão e abdominal.',
       isChecked: true
     },
     {
-      id:3,
+      id:'3',
       content: 'Grindar poker na parte da tarde, das 13:00 as 21:00.',
       isChecked: false
     },
     {
-      id:4,
+      id:'4',
       content: 'Ligar para o dentista e marcar um horário.',
       isChecked: true
     },    {
-      id:5,
+      id:'5',
       content: 'Terminar o projeto proposto no desafio da rocketseat para estudantes de react.',
       isChecked: true
     }
@@ -44,7 +53,7 @@ export function TasksContainer({NTask}) {
     setIsCheckedCount(isCheckedArray)
   }
  
-  function deleteTask(taskToDelete: number) {
+  function deleteTask(taskToDelete: string) {
     const tasksWithoutDeletedOne = tasks.filter(task => {
       return task.id !== taskToDelete
     })    
@@ -65,7 +74,7 @@ export function TasksContainer({NTask}) {
     handleCreateTask(NTask);  
   }, [NTask]) 
 
-  function changeCheck(id:number){
+  function changeCheck(id:string){
     const newArrayChecked = tasks.map((task) => {
       if( task.id === id ) {
       return {...task, isChecked: !task.isChecked};

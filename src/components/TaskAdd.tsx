@@ -1,11 +1,11 @@
 import styles from './TaskAdd.module.css'
 import plus from '../assets/plus.svg'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
-interface taskFunctionTeste {
-  onHandleCreateTask: () => void
+interface taskCreateFunction {
+  onHandleCreateTask: (content:string) => void
 }
-export function TaskAdd({onHandleCreateTask}: taskFunctionTeste) {
+export function TaskAdd({onHandleCreateTask}: taskCreateFunction) {
 
 
   const [newTaskText, setNewTaskText] = useState('')
