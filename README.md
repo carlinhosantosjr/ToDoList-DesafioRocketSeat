@@ -1,5 +1,5 @@
 # 💻 Sobre o projeto
- 📄 **ToDo List -** é um projeto desenvolvido como desafio do modulo de react da rocketseat.
+ 📄 **ToDo List -** é um projeto desenvolvido como desafio do primeiro modulo de react da rocketseat.
  <br/> 
    A intenção principal do desenvolvimento é reforçar o conhecimento aprendido no curso até o momento.
  <br/> 
